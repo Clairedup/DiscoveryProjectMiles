@@ -10,14 +10,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-
-    <artifactId>DiscoveryProjectDomain</artifactId>
+    <artifactId>DiscoveryProjectRepository</artifactId>
     <packaging>jar</packaging>
 
 
-    <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-    </properties>
 
 </project>

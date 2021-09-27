@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DiscoveryProject" />
         <module name="DiscoveryProjectDomain" />
+        <module name="DiscoveryProject" />
+        <module name="DiscoveryProjectRepository" />
+        <module name="DiscoveryProjectTranslator" />
+        <module name="DiscoveryProjectLogic" />
       </profile>
     </annotationProcessing>
   </component>
