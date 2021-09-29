@@ -8,6 +8,8 @@
     <artifactId>DiscoveryProject</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>pom</packaging>
+
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
@@ -18,6 +20,7 @@
         <module>DiscoveryProjectRepository</module>
         <module>DiscoveryProjectTranslator</module>
         <module>DiscoveryProjectLogic</module>
+        <module>DiscoveryProjectWeb</module>
 
     </modules>
     <dependencyManagement>
@@ -35,5 +38,16 @@
             <artifactId>spring-context</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>

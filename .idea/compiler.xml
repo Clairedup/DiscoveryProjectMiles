@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="DiscoveryProjectDomain" />
-        <module name="DiscoveryProject" />
+        <module name="DiscoveryProjectWeb" />
         <module name="DiscoveryProjectRepository" />
         <module name="DiscoveryProjectTranslator" />
         <module name="DiscoveryProjectLogic" />
