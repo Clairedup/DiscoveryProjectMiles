@@ -9,9 +9,20 @@
         <module name="DiscoveryProjectDomain" />
         <module name="DiscoveryProjectWeb" />
         <module name="DiscoveryProjectRepository" />
+        <module name="DiscoveryProjectWebSpringBoot" />
         <module name="DiscoveryProjectTranslator" />
         <module name="DiscoveryProjectLogic" />
       </profile>
     </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DiscoveryProjectDomain" options="-parameters" />
+      <module name="DiscoveryProjectLogic" options="-parameters" />
+      <module name="DiscoveryProjectRepository" options="-parameters" />
+      <module name="DiscoveryProjectTranslator" options="-parameters" />
+      <module name="DiscoveryProjectWeb" options="-parameters" />
+      <module name="DiscoveryProjectWebSpringBoot" options="-parameters" />
+    </option>
   </component>
 </project>
