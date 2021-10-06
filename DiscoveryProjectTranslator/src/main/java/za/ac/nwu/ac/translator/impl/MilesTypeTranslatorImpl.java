@@ -35,4 +35,17 @@ public class MilesTypeTranslatorImpl implements MilesTypeTranslator
         return milesTypeDtos;
     }
 
+    @Override
+    public MilesTypeDto create(MilesTypeDto milesTypeDto)
+    {
+        try {
+            MilesType milesType = accountTypeRepo.save(milesTypeDto.getMilesType());
+            return new MilesTypeDto(milesType);
+        }
+        catch (Exception e)
+        {
+            throw new RuntimeException("Unable to save to DB", e);
+        }
+    }
+
 }

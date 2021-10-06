@@ -1,10 +1,12 @@
 package za.ac.nwu.ac.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import za.ac.nwu.ac.domain.persistence.MilesType;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class MilesTypeDto  implements Serializable {
     private static final long serialVersionUID = 595554;
@@ -77,4 +79,35 @@ public class MilesTypeDto  implements Serializable {
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (this == null || getClass() != o.getClass()) return false;
+        MilesTypeDto that = (MilesTypeDto) o;
+        return Objects.equals(mnemonic, that.mnemonic) && Objects.equals(accountName, that.accountName) && Objects.equals(creationDate, that.creationDate);
+    }
+
+    @JsonIgnore
+    public MilesType getMilesType()
+    {
+        return new MilesType(getMnemonic(), getAccountName(), getCreationDate());
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(mnemonic, accountName, creationDate);
+    }
+
+    @Override
+    public String toString()
+    {
+        return "MilesTypeDto{"+" +
+            "mnemonic" + mnemonic + "'\'" +
+            ", accountTypeName" + accountName + "'\'" +
+             ", creationDate " + creationDate +
+             '}";
+    }
+
 }

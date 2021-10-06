@@ -17,5 +17,9 @@ public class FetchMilesTypeFlow implements FetchMilesTypeFlow
         return milesTypeDtos;
     }
 
+    public boolean setMethodToTest()
+    {
+        return true;
+    }
 }
 
