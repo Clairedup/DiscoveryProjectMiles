@@ -13,7 +13,7 @@ public class MilesTrans {
 
     @Id
     @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "VITRSA_SANDBOX.VIT_RSA_GENERIC_SEQ",allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.AUTO.SEQUENCE, generator = "VIT_RSA_GENERIC_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE.AUTO, generator = "VIT_RSA_GENERIC_SEQ")
 
     @Column(name = "TRANS_ID")
     private long transId;
@@ -42,7 +42,7 @@ public class MilesTrans {
    @JoinColumn(name = "TYPE_ID")
    public MilesType getMilesType()
    {
-       return milesType;
+       return getMilesType();
    }
 
 

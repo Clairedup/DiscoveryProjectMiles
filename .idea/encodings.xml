@@ -2,6 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/DiscoveryProjectDomain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DiscoveryProjectLogic/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DiscoveryProjectRepository/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DiscoveryProjectTranslator/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/DiscoveryProjectWeb/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/DiscoveryProjectWeb/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/DiscoveryProjectWebSpringBoot/src/main/java" charset="UTF-8" />
