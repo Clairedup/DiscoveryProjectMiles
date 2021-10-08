@@ -11,18 +11,21 @@ class FetchMilesTypeFlowTest {
     private FetchMilesTypeFlowTest testClass;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws Exception
+    {
         testClass = new FetchMilesTypeFlow(null);
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDown()throws Exception
+    {
         testClass = null;
     }
 
 
     @Test
-    void setMethodToTest() {
+    void setMethodToTest()throws Exception
+    {
         assertTrue(testClass.methodToTest());
     }
 }

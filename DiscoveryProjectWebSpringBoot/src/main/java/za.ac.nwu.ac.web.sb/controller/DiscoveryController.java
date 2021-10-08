@@ -43,6 +43,52 @@ public class DiscoveryController {
         GeneralResponse<List<MilesTypeDto>> response = new GeneralResponse<>(true, "No types found");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+    
+    @DeleteMapping("{mnemonic}")
+    @ApiOperation(value = "Deletes specified miles type", notes = "Deletes specified miles type")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Account deleted"),
+            @ApiResponse(code = 400, message = "Bad request", response = GeneralResponse.class),
+            @ApiResponse(code = 404, message = "Not found", response = GeneralResponse.class),
+            @ApiResponse(code = 500, message = "Internal server error", response = GeneralResponse.class)
+    })
+    
+    private ResponseEntity<GeneralResponse<MilesTypeDto>> deleteMilesType(
+            @ApiParam(value = "mnemonic that uniquely identifies account",
+            example = "MILES",
+            name = "mnemonic",
+            required = true)
+            @PathVariable("mnemonic") final String mnemonic) {
+
+        MilesTypeDto milesTypes = modifyMilesTypeFlow.deleteMilesType(mnemonic);
+            
+            GeneralResponse<MilesTypeDto> response = new GeneralResponse<>(true, milesTypes);
+
+            return new ResponseEntity<>(response, HttpStatus.OK);
+
+    }
+
+    @PutMapping("mnemonic")
+    @ApiOperation(value = "Updates Miles Type", notes = "Updates Miles type in DB.")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "MilesType was updated successfully", response = GeneralResponse.class),
+            @ApiResponse(code = 400, message = "Bad request", response = GeneralResponse.class),
+            @ApiResponse(code = 404, message = "Not found", response = GeneralResponse.class),
+            @ApiResponse(code = 500, message = "Internal server error", response = GeneralResponse.class)
+    })
+
+    public ResponseEntity<GeneralResponse<MilesTypeDto>> updateMilesType(
+            @ApiParam(value = "mnemonic that uniquely identifies account",
+                    example = "MILES",
+                    name = "mnemonic",
+                    required = true)
+            @PathVariable("mnemonic") final String mnemonic),
+
+        @ApiParam(value = "New miles type to be updated",
+                name = "newMilesTypeName",
+                required = true)
+        @RequestParam("newMilesTypeName") final String newMilesTypeName;
+
 
     @PostMapping("")
     @ApiOperation(value = "Creates new Miles Type", notes = "Creates new Miles type in DB.")
@@ -60,4 +106,6 @@ public class DiscoveryController {
         GeneralResponse<MilesTypeDto> response = new GeneralResponse<>(true, milesTypeResponse);
         return  new ResponseEntity<>(response, HttpStatus.CREATED);
      }
+
+
 }

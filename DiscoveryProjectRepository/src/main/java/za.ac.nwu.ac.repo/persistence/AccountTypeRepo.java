@@ -15,8 +15,8 @@ public interface AccountTypeRepo extends JpaRepository<MilesType, Long>
             "       TYPE_ID,"  +
             "       ACCOUNT_NAME" +
             "       CREATION_DATE, " +
-            "       MNEMONIC" +
-            "       From  +
+            "       MNEMONIC"
+            "       From
             "       VITRSA_SANDBOX_MILES_TYPE" +
             "       WHERE MNEMONIC = :mnemonic", nativeQuery = true)
     MilesType getMilesTypeByMnemonicNativeQuery(String mnemonic);
