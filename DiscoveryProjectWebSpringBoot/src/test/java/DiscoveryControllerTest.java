@@ -6,6 +6,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import za.ac.nwu.ac.domain.dto.MilesTypeDto;
@@ -17,7 +18,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
@@ -41,7 +43,7 @@ public class DiscoveryControllerTest {
     @Before
     public void setUp()
     {
-        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+        MockMvc = MockMvcBuilders.standaloneSetup(controller).build();
     }
 
     @Test
@@ -58,7 +60,10 @@ public class DiscoveryControllerTest {
 
         when(fetchMilesTypeFlow.getAllMilesTypes()).thenReturn(milesTypes);
 
-        MvcResult mvcResult = mockMVC.perform(milesTypes.get());
+        MvcResult mvcResult = MockMvc.perform(milesTypes.get());
+
+        verify(fetchMilesTypeFlow, times(1)).getAllMilesTypes();
+        assertEquals(expectedResponse,mvcResult.getResponse().getContentAsString());
     }
 
 

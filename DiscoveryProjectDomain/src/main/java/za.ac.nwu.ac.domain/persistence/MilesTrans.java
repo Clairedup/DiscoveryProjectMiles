@@ -8,8 +8,18 @@ import java.util.Set;
 
 @Entity
 @Table(name = "MILES_TRANS", schema = "VITRSA_SANDBOX")
-public class MilesTrans {
+public class MilesTrans implements Serializable {
+
     private static final long serialVersionUID = 3_816_165_46;
+
+    private Long transactionID;
+    private MilesType milesType;
+    private  Long memberID;
+    private Long account;
+    private LocalDate transactionDate;
+
+    private MilesTransDetails details;
+
 
     @Id
     @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "VITRSA_SANDBOX.VIT_RSA_GENERIC_SEQ",allocationSize = 1)

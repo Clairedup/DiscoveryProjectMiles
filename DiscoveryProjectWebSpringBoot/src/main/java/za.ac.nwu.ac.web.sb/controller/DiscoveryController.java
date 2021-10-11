@@ -21,6 +21,7 @@ public class DiscoveryController {
 
     private final FetchMilesTypeFlow fetchMilesTypeFlow;
     private final CreateMilesTypeFlowInt createMilesTypeFlowInt;
+    private final ModifyMilesTypeFlow modifyMilesTypeFlow;
 
     @Autowired
     public DiscoveryController(FetchMilesTypeFlow fetchMilesTypeFlow,
@@ -28,6 +29,7 @@ public class DiscoveryController {
     {
         this.fetchMilesTypeFlow = fetchMilesTypeFlow;
         this.createMilesTypeFlowInt =createMilesTypeFlowInt;
+        this.modifyMilesTypeFlow = modifyMilesTypeFlow;
     }
 
     @GetMapping("/all")
