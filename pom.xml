@@ -129,7 +129,7 @@
                             <rule>
                                 <element>CLASS</element>
                                 <excludes>
-                                    <exclude>za.ac.nwu.ac.domain.dto.*</exclude>
+                                    <exclude>za.ac.nwu.ac.domain</exclude>
                                     <exclude>za.ac.nwu.ac.logic.config.LogicConfig</exclude>
                                 </excludes>
                                 <limits>

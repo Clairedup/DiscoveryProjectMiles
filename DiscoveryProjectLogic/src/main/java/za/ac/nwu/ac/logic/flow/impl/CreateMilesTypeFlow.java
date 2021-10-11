@@ -28,7 +28,7 @@ public class CreateMilesTypeFlow implements CreateMilesTypeFlowInt {
     @Override
     public MilesTypeDto create(MilesTypeDto milesType)
     {
-        LOGGER.info("This was the input {}", milesType;
+        LOGGER.info("This was the input {}", milesType);
 
         if(null == milesType.getCreationDate())
         {

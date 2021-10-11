@@ -84,7 +84,7 @@ public class DiscoveryController {
                     example = "MILES",
                     name = "mnemonic",
                     required = true)
-            @PathVariable("mnemonic") final String mnemonic),
+            @PathVariable("mnemonic") final String mnemonic)
 
         @ApiParam(value = "New miles type to be updated",
                 name = "newMilesTypeName",
